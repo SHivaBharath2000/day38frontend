@@ -8,6 +8,8 @@ import TeacherList from "./pages/teachers/TeacherList.jsx";
 import Home from "./pages/Home/Home.jsx";
 import React,{useState} from "react";
 import VerifyAccount from "./pages/verify account/VerifyAccount.jsx";
+import ForgotPassword from "./pages/Forgot.jsx";
+import PasswordResetForm from "./pages/reset password/Resetpassword.jsx";
 const AppRoutes=()=>{
     return(
         <BrowserRouter>
@@ -18,6 +20,8 @@ const AppRoutes=()=>{
             <Route path="/teachers" element={<ProtectedRoute component={<App/>}/>}/>
             <Route path="/register" element={<Register/>}/>
             <Route path="/verify-account" element={<VerifyAccount/>}/>
+            <Route path="/forgot-password" element={<ForgotPassword/>}/>
+            <Route path="/reset-password" element={<PasswordResetForm/>}/>
             <Route path="/login" element={<Login/>}/>
          </Routes>
         </BrowserRouter>

@@ -62,4 +62,43 @@ const verifyAccount=async(token)=>{
 return await response.json();
 }
 
-export { userSignup , userSignIn ,verifyAccount};
+// const forgotPassword=async(userData)=>{
+//   const response=await fetch(`${beUrl}/forgot`,{
+//     method:'POST',
+//     body:JSON.stringify({
+//       userData
+//     }),
+//   headers:{
+//     "Content-Type":"application/json;charset=utf-8"
+//   },
+// });
+// return await response.json();
+// }
+const forgotPassword=async(userData)=>{
+  try {
+    const response = await axios.post(`${beUrl }/forgot`, userData, {
+      headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error during send mail:', error);
+    throw error;
+  }
+};
+const resetPassword=async(userData)=>{
+  try {
+    const response = await axios.post(`${beUrl }/forgotpassword`, userData, {
+      headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error during reset the password:', error);
+    throw error;
+  }
+};
+
+export { userSignup , userSignIn ,verifyAccount,forgotPassword,resetPassword};

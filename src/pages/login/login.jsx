@@ -73,6 +73,9 @@ const navigate = useNavigate();
                 <Link style={{ float: "right" }} to="/register">
                   Go to Register
                 </Link>
+                <Link style={{ float: "right" }} to="/forgot-password">
+                  forgot password?
+                </Link>
               </form>
             </div>
           </div>
