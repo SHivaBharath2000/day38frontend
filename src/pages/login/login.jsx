@@ -70,12 +70,17 @@ const navigate = useNavigate();
                 <button type="submit" className="btn btn-primary btn-block">
                   Login
                 </button>
+                <div class="links">
                 <Link style={{ float: "right" }} to="/register">
                   Go to Register
                 </Link>
+                <div> </div>
                 <Link style={{ float: "right" }} to="/forgot-password">
                   forgot password?
                 </Link>
+                <div> </div>
+                <Link style={{ float: "right" }} to='/URL-shortner'>URL Shortener</Link>
+                </div>
               </form>
             </div>
           </div>

@@ -100,5 +100,37 @@ const resetPassword=async(userData)=>{
     throw error;
   }
 };
+const URLShortner=async(userData)=>{
+  try {
+    const response = await axios.post(`${beUrl }/URL-shortner`, userData, {
+      headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error during URL shortner:', error);
+    throw error;
+  }
+};
+// get URL id
+ const URLid = async (userData) => {
+  try {
+    const response = await axios.post(`${beUrl }/redirect`, userData,{
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching URL:', error);
+    throw error;
+  }
+};
+const samplePromise = (url) => new Promise((resolve) => {
+  setTimeout(() => {
+    resolve({ longUrl: url });
+  }, 4000);
+});
 
-export { userSignup , userSignIn ,verifyAccount,forgotPassword,resetPassword};
+export { userSignup , userSignIn ,verifyAccount,forgotPassword,resetPassword, URLShortner,samplePromise,URLid};

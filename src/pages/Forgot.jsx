@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { forgotPassword } from '../apis/auth';
+import { useNavigate } from 'react-router-dom';
 
 const ForgotPassword = () => {
+  const navigate=useNavigate()
   const [email, setEmail] = useState('');
 
   const handleSubmit =  async(e) => {
@@ -10,7 +12,9 @@ const ForgotPassword = () => {
     const data=await forgotPassword({email})
     if(data.code==1){
         alert("Email send successfully")
+        navigate("/")
     }
+   
     else{
         alert("Email not send")
     }

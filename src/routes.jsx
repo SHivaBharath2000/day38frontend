@@ -10,6 +10,8 @@ import React,{useState} from "react";
 import VerifyAccount from "./pages/verify account/VerifyAccount.jsx";
 import ForgotPassword from "./pages/Forgot.jsx";
 import PasswordResetForm from "./pages/reset password/Resetpassword.jsx";
+import Form from "./pages/URLShortner/URLShortner.jsx";
+import Redirect from "./pages/redirect/Redirect.jsx";
 const AppRoutes=()=>{
     return(
         <BrowserRouter>
@@ -22,6 +24,8 @@ const AppRoutes=()=>{
             <Route path="/verify-account" element={<VerifyAccount/>}/>
             <Route path="/forgot-password" element={<ForgotPassword/>}/>
             <Route path="/reset-password" element={<PasswordResetForm/>}/>
+            <Route path="/URL-shortner" element={<Form/>}/>
+            <Route path="/redirect-url/:urlid" element={<Redirect />} />
             <Route path="/login" element={<Login/>}/>
          </Routes>
         </BrowserRouter>
